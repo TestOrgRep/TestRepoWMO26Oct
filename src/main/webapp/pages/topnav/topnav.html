@@ -1,0 +1,18 @@
+<wm-partial data-ng-controller="topnavPageController" name="partial1">
+    <wm-navbar name="navbar1">
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left">
+            <wm-nav-item name="list_home">
+                <wm-anchor caption="User Interfaces" name="homeLink" iconclass="wi wi-important-devices" on-click="Variables.goToPage_Main.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="list_services"></wm-nav-item>
+            <wm-nav-item name="nav_item5">
+                <wm-anchor name="anchor4" iconclass="wi wi-picture-in-picture" caption="Design Elements" on-click="Variables.goToPage_Widgets.invoke()"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right">
+            <wm-nav-item name="list_help">
+                <wm-anchor caption="Help" name="helpLink" iconclass="wi wi-help-outline"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+    </wm-navbar>
+</wm-partial>
