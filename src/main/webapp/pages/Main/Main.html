@@ -4,6 +4,7 @@
     <wm-content name="content1">
         <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
         <wm-page-content columnwidth="8" name="page_content1">
+            <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1"></wm-button>
             <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" dataset="bind:Variables.userInterfaceCategory.dataSet" navigation="None" name="UICardList" title="" groupby="category">
                 <wm-listtemplate layout="media" name="listtemplate">
                     <wm-card name="UICard" iconclass="" picturesource="bind:&quot;resources/images/imagelists/screenshot/&quot; + Variables.userInterfaceCategory.dataSet[$i].thumbnail
