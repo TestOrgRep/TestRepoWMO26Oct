@@ -1,5 +1,5 @@
 {
-  "enforceSecurity" : false,
+  "enforceSecurity" : true,
   "loginConfig" : {
     "type" : "PAGE",
     "pageName" : "Login",
@@ -25,12 +25,17 @@
     "enforceCsrfSecurity" : false,
     "headerName" : "X-WM-XSRF-TOKEN"
   },
+  "corsConfig" : {
+    "enabled" : false,
+    "maxAge" : 1600,
+    "pathEntries" : [ ]
+  },
   "tokenAuthConfig" : {
     "enabled" : true,
     "parameter" : "WM_AUTH_TOKEN",
     "tokenValiditySeconds" : 1800
   },
-  "authProviders" : [ "DEMO" ],
+  "authProviders" : [ "DATABASE" ],
   "xFrameOptions" : {
     "mode" : "SAMEORIGIN",
     "allowFromUrl" : null

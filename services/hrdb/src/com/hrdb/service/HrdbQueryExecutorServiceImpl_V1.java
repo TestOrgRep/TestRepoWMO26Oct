@@ -32,22 +32,6 @@ public class HrdbQueryExecutorServiceImpl_V1 implements HrdbQueryExecutorService
 
     @Transactional(value = "hrdbTransactionManager")
     @Override
-    public int executeInsertQuesryVacation(Integer id, Date startDate, Date endDate, Integer empId, Integer tenantId, String status, String typecol) {
-        Map params = new HashMap(7);
-
-        params.put("ID", id);
-        params.put("START_DATE", startDate);
-        params.put("END_DATE", endDate);
-        params.put("EMP_ID", empId);
-        params.put("TENANT_ID", tenantId);
-        params.put("STATUS", status);
-        params.put("TYPECol", typecol);
-
-        return queryExecutor.executeNamedQueryForUpdate("insertQuesryVacation", params);
-    }
-
-    @Transactional(value = "hrdbTransactionManager")
-    @Override
     public int executeInsertQuesryEmployee(Integer empId, String lastname, String firstname, String username, String password, String street, String city, String state, String zip, Date birthdate, Integer tenantId) {
         Map params = new HashMap(11);
 
@@ -77,6 +61,22 @@ public class HrdbQueryExecutorServiceImpl_V1 implements HrdbQueryExecutorService
         params.put("TENANT_ID", tenantId);
 
         return queryExecutor.executeNamedQueryForUpdate("insertQuery_User", params);
+    }
+
+    @Transactional(value = "hrdbTransactionManager")
+    @Override
+    public int executeInsertQuesryVacation(Integer id, Date startDate, Date endDate, Integer empId, Integer tenantId, String status, String typecol) {
+        Map params = new HashMap(7);
+
+        params.put("ID", id);
+        params.put("START_DATE", startDate);
+        params.put("END_DATE", endDate);
+        params.put("EMP_ID", empId);
+        params.put("TENANT_ID", tenantId);
+        params.put("STATUS", status);
+        params.put("TYPECol", typecol);
+
+        return queryExecutor.executeNamedQueryForUpdate("insertQuesryVacation", params);
     }
 
 }

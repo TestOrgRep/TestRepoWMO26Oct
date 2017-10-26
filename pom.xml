@@ -20,6 +20,13 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/MSUsers/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/github/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -114,6 +121,7 @@
                         <configuration>
                             <sources>
                                 <source>services/FileService/src</source>
+                                <source>services/MSUsers/src</source>
                                 <source>services/github/src</source>
                                 <source>services/hrdb/src</source>
                                 <source>services/securityService/src</source>
@@ -327,9 +335,9 @@
         </dependencies>
     </dependencyManagement>
     <properties>
-        <spring.version>4.2.0.RELEASE</spring.version>
+        <spring.version>4.3.9.RELEASE</spring.version>
         <profile.props.file>development.properties</profile.props.file>
         <spring.security.version>4.1.2.RELEASE</spring.security.version>
-        <wavemaker.studio.version>8.5.0</wavemaker.studio.version>
+        <wavemaker.studio.version>9.0.0</wavemaker.studio.version>
     </properties>
 </project>

@@ -1,0 +1,19 @@
+{
+  "modelName" : "MSUsers",
+  "entityName" : "Table1",
+  "tableName" : "TABLE1",
+  "unamePropertyName" : "username",
+  "unameColumnName" : "username",
+  "uidPropertyName" : "id",
+  "uidColumnName" : "ID",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "password",
+  "rolePropertyName" : "role",
+  "roleColumnName" : "role",
+  "useRolesQuery" : false,
+  "rolesByUsernameQuery" : "",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "HQL"
+}

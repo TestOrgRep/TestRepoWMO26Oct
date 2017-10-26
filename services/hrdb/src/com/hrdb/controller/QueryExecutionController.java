@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -42,20 +43,10 @@ public class QueryExecutionController {
     @Autowired
     private HrdbQueryExecutorService queryService;
 
-    @RequestMapping(value = "/queries/insertQuesryVacation", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "insertQuesryVacation")
-    public Integer executeInsertQuesryVacation(@Valid @RequestBody InsertQuesryVacationRequest insertQuesryVacationRequest) {
-        LOGGER.debug("Executing named query: insertQuesryVacation");
-        Integer _result = queryService.executeInsertQuesryVacation(insertQuesryVacationRequest);
-        LOGGER.debug("got the result for named query: insertQuesryVacation, result:{}", _result);
-        return _result;
-    }
-
     @RequestMapping(value = "/queries/insertQuesryEmployee", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "insertQuesryEmployee")
-    public Integer executeInsertQuesryEmployee(@Valid @RequestBody InsertQuesryEmployeeRequest insertQuesryEmployeeRequest) {
+    public Integer executeInsertQuesryEmployee(@Valid @RequestBody InsertQuesryEmployeeRequest insertQuesryEmployeeRequest, HttpServletRequest _request) {
         LOGGER.debug("Executing named query: insertQuesryEmployee");
         Integer _result = queryService.executeInsertQuesryEmployee(insertQuesryEmployeeRequest);
         LOGGER.debug("got the result for named query: insertQuesryEmployee, result:{}", _result);
@@ -65,10 +56,20 @@ public class QueryExecutionController {
     @RequestMapping(value = "/queries/insertQuery_User", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "insertQuery_User")
-    public Integer executeInsertQuery_User(@Valid @RequestBody InsertQueryUserRequest insertQueryUserRequest) {
+    public Integer executeInsertQuery_User(@Valid @RequestBody InsertQueryUserRequest insertQueryUserRequest, HttpServletRequest _request) {
         LOGGER.debug("Executing named query: insertQuery_User");
         Integer _result = queryService.executeInsertQuery_User(insertQueryUserRequest);
         LOGGER.debug("got the result for named query: insertQuery_User, result:{}", _result);
+        return _result;
+    }
+
+    @RequestMapping(value = "/queries/insertQuesryVacation", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "insertQuesryVacation")
+    public Integer executeInsertQuesryVacation(@Valid @RequestBody InsertQuesryVacationRequest insertQuesryVacationRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: insertQuesryVacation");
+        Integer _result = queryService.executeInsertQuesryVacation(insertQuesryVacationRequest);
+        LOGGER.debug("got the result for named query: insertQuesryVacation, result:{}", _result);
         return _result;
     }
 

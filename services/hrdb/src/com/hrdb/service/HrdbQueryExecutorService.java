@@ -11,11 +11,11 @@ import com.hrdb.models.query.InsertQuesryVacationRequest;
 
 public interface HrdbQueryExecutorService {
 
-    Integer executeInsertQuesryVacation(InsertQuesryVacationRequest insertQuesryVacationRequest);
-
     Integer executeInsertQuesryEmployee(InsertQuesryEmployeeRequest insertQuesryEmployeeRequest);
 
     Integer executeInsertQuery_User(InsertQueryUserRequest insertQueryUserRequest);
+
+    Integer executeInsertQuesryVacation(InsertQuesryVacationRequest insertQuesryVacationRequest);
 
 }
 

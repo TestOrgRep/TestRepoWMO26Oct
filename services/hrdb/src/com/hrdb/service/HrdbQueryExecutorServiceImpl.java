@@ -32,22 +32,6 @@ public class HrdbQueryExecutorServiceImpl implements HrdbQueryExecutorService {
 
     @Transactional(value = "hrdbTransactionManager")
     @Override
-    public Integer executeInsertQuesryVacation(InsertQuesryVacationRequest insertQuesryVacationRequest) {
-        Map params = new HashMap(7);
-
-        params.put("ID", insertQuesryVacationRequest.getId());
-        params.put("START_DATE", insertQuesryVacationRequest.getStartDate());
-        params.put("END_DATE", insertQuesryVacationRequest.getEndDate());
-        params.put("EMP_ID", insertQuesryVacationRequest.getEmpId());
-        params.put("TENANT_ID", insertQuesryVacationRequest.getTenantId());
-        params.put("STATUS", insertQuesryVacationRequest.getStatus());
-        params.put("TYPECol", insertQuesryVacationRequest.getTypecol());
-
-        return queryExecutor.executeNamedQueryForUpdate("insertQuesryVacation", params);
-    }
-
-    @Transactional(value = "hrdbTransactionManager")
-    @Override
     public Integer executeInsertQuesryEmployee(InsertQuesryEmployeeRequest insertQuesryEmployeeRequest) {
         Map params = new HashMap(11);
 
@@ -77,6 +61,22 @@ public class HrdbQueryExecutorServiceImpl implements HrdbQueryExecutorService {
         params.put("TENANT_ID", insertQueryUserRequest.getTenantId());
 
         return queryExecutor.executeNamedQueryForUpdate("insertQuery_User", params);
+    }
+
+    @Transactional(value = "hrdbTransactionManager")
+    @Override
+    public Integer executeInsertQuesryVacation(InsertQuesryVacationRequest insertQuesryVacationRequest) {
+        Map params = new HashMap(7);
+
+        params.put("ID", insertQuesryVacationRequest.getId());
+        params.put("START_DATE", insertQuesryVacationRequest.getStartDate());
+        params.put("END_DATE", insertQuesryVacationRequest.getEndDate());
+        params.put("EMP_ID", insertQuesryVacationRequest.getEmpId());
+        params.put("TENANT_ID", insertQuesryVacationRequest.getTenantId());
+        params.put("STATUS", insertQuesryVacationRequest.getStatus());
+        params.put("TYPECol", insertQuesryVacationRequest.getTypecol());
+
+        return queryExecutor.executeNamedQueryForUpdate("insertQuesryVacation", params);
     }
 
 }
